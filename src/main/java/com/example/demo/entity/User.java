@@ -1,8 +1,10 @@
-package com.example.demo.model;
+package com.example.demo.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User 
@@ -10,8 +12,13 @@ public class User
 	@Id
 	@GeneratedValue
 	private int id;
+	@NotBlank(message = "Name is missing")
+	@Size(max = 10,message = "too long name")
 	private String name;
+	@NotBlank(message = "role is missing")
+	@Size(max = 16,message = "too long role")
 	private String role;
+	
 	public User(int id, String name, String role) {
 		super();
 		this.id = id;
