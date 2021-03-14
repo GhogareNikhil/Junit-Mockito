@@ -78,8 +78,6 @@ class UserDemo1ApplicationTests {
 		Assert.assertTrue(response.isStatus() == Boolean.TRUE);
 	}
 
-	@Test
-	void contextLoads() {
-	}
+	
 
 }
